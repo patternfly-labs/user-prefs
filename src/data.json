@@ -1,0 +1,123 @@
+[
+    {
+      "type": "console.user-preference/group",
+      "properties": {
+        "id": "general",
+        "label": "General"
+      }
+    },
+    {
+      "type": "console.user-preference/group",
+      "properties": {
+        "id": "language",
+        "label": "Language & region"
+      }
+    },
+    {
+      "type": "console.user-preference/group",
+      "properties": {
+        "id": "notifications",
+        "label": "Notifications"
+      }
+    },
+    {
+      "type": "console.user-preference/item",
+      "properties": {
+        "id": "console.preferredPerspective",
+        "label": "Perspective",
+        "groupId": "general",
+        "description": "Consumer provided component",
+        "field": {
+          "type": "custom",
+          "component": { "$codeRef": "userPreferences.PerspectiveDropdown" }
+        }
+      }
+    },
+    {
+      "type": "console.user-preference/item",
+      "properties": {
+        "id": "console.namespace.favorite",
+        "label": "Project",
+        "groupId": "general",
+        "description": "Consumer provided component (not found)",
+        "field": {
+          "type": "custom",
+          "component": { "$codeRef": "userPreferences.NamespaceDropdown" }
+        },
+        "insertBefore": "topology.preferredView"
+      }
+    },
+    {
+      "type": "console.user-preference/item",
+      "properties": {
+        "id": "console.preferredLanguage",
+        "label": "Language",
+        "groupId": "language",
+        "description": "Consumer provided component (not found)",
+        "field": {
+          "type": "custom",
+          "component": { "$codeRef": "userPreferences.LanguageDropdown" }
+        }
+      }
+    },
+    {
+      "type": "console.user-preference/item",
+      "properties": {
+        "id": "topology.preferredView",
+        "label": "Topology",
+        "groupId": "general",
+        "description": "Built-in dropdown component",
+        "field": {
+          "type": "dropdown",
+          "userSettingsKey": "topology.preferredView",
+          "defaultValue": "latest",
+          "options": [
+            {
+              "value": "latest",
+              "label": "Last viewed"
+            },
+            { "value": "graph", "label": "Graph" },
+            { "value": "list", "label": "List" }
+          ]
+        },
+        "insertBefore": "console.preferredCreateMethod",
+        "insertAfter": "console.preferredNamespace"
+      }
+    },
+    {
+      "type": "console.user-preference/item",
+      "properties": {
+        "id": "test.checkboxId",
+        "label": "Checkbox label",
+        "groupId": "general",
+        "description": "Built-in checkbox component",
+        "field": {
+          "type": "checkbox",
+          "userSettingsKey": "test.checkboxId",
+          "defaultValue": "true",
+          "trueValue": "true",
+          "falseValue": "false"
+        }
+      }
+    },
+    {
+      "type": "console.user-preference/item",
+      "properties": {
+        "id": "console.pfButton",
+        "label": "Any PF component",
+        "groupId": "general",
+        "description": "Built-in access to PF components",
+        "field": {
+          "type": "patternfly",
+          "component": { 
+            "$codeRef": "Button"
+          },
+          "props": {
+            "variant": "danger",
+            "children": "Hello World"
+          }
+        }
+      }
+    }
+  ]
+  
